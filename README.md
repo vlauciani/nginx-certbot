@@ -1,3 +1,14 @@
+[![License](https://img.shields.io/github/license/vlauciani/nginx-certbot.svg)](https://github.com/vlauciani/nginx-certbot/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/vlauciani/nginx-certbot.svg)](https://github.com/vlauciani/nginx-certbot/issues)
+
+[![Docker build](https://img.shields.io/badge/docker%20build-from%20CI-yellow)](https://hub.docker.com/r/vlauciani/nginx-certbot)
+![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/vlauciani/nginx-certbot?sort=semver)
+![Docker Pulls](https://img.shields.io/docker/pulls/vlauciani/nginx-certbot)
+
+[![CI](https://github.com/vlauciani/nginx-certbot/actions/workflows/docker-image.yml/badge.svg)](https://github.com/vlauciani/nginx-certbot/actions)
+[![GitHub](https://img.shields.io/static/v1?label=GitHub&message=Link%20to%20repository&color=blueviolet)](https://github.com/vlauciani/nginx-certbot)
+
+
 # nginx-certbot
 
 ## Getting started
