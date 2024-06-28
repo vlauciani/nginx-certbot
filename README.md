@@ -39,7 +39,7 @@ _ONLY FIRST TIME_ you need to register ACME account into the _nginx-certbot_ run
 docker exec -it nginx-certbot certbot register --server https://acme.sectigo.com/v2/OV --email <email> --eab-kid <eab-kid> --eab-hmac-key <eab-hmac-key>
 ```
 
-Get certificate, install it and _automatically_ restart _Nginx_ (the `server_name` into _nginx_ configuration, must be the same used in `--domain`):
+Get the certificate, install it, and _automatically_ restart _Nginx_ (the `server_name` in the _Nginx_ configuration must match the domain specified with `--domain` option):
 ```sh
 docker exec -it nginx-certbot certbot --nginx --non-interactive --server https://acme.sectigo.com/v2/OV -v --cert-name <cert_name> --domain <domain>
 ```
