@@ -13,11 +13,6 @@
 
 ## Getting started
 
-### Build
-```
-docker build -t nginx-certbot .
-```
-
 ### Run container
 Run container in _daemon_ mode (see below for _ENVIRONMENTS_ details):
 ```sh
@@ -31,7 +26,7 @@ docker run -d \
     -e CERTBOT_ENABLE_RENEW=1 \
     -e CERTBOT_CA_HOST=https://acme.sectigo.com/v2/OV \
     -v $(pwd)/volumes/etc/letsencrypt:/etc/letsencrypt \
-    nginx-certbot
+    vlauciani/nginx-certbot
 ```
 
 _ONLY FIRST TIME_ you need to register ACME account into the _nginx-certbot_ running container:
@@ -67,6 +62,12 @@ docker exec -it nginx-certbot certbot revoke --server https://acme.sectigo.com/v
 #### delete certificate
 ```
 docker exec -it nginx-certbot certbot delete --server https://acme.sectigo.com/v2/OV -v --cert-name <cert_name>
+```
+
+### Build docker images by _yourself_
+Instead of using the _pre_-built docker image, you can build the Docker image by _yourself_:
+```
+docker build -t vlauciani/nginx-certbot .
 ```
 
 ## Contribute
