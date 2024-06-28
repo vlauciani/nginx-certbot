@@ -41,7 +41,7 @@ jobs:
         DOCKER_PASS: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       with:
         provider: dockerhub
-        destination_container_repo: ${{ secrets.DOCKERHUB_USERNAME }}/nginx-certbot
+        destination_container_repo: ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-certbot
         readme_file: 'README.md'
         short_description: 'Nginx with Certbot'
 
