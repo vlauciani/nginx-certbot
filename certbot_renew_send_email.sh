@@ -11,7 +11,7 @@ if (( ${CERTBOT_ENABLE_RENEW_SEND_EMAIL} == 1 )); then
   echo "Subject: Certbot renew - hostname:$(hostname)"
   echo
   cat /tmp/certbot_renew.log
-) | msmtp ${CERTBOT_EMAIL_FROM_ADDRESS}
+) | msmtp ${CERTBOT_EMAIL_TO_ADDRESS}
 else 
   echo " CERTBOT_ENABLE_RENEW_SEND_EMAIL=${CERTBOT_ENABLE_RENEW_SEND_EMAIL}"
 fi

@@ -22,6 +22,7 @@ docker run -d \
     -p443:443 \
     --name nginx-certbot \
     -e CERTBOT_EMAIL_FROM_ADDRESS=mario.rossi@test.it \
+    -e CERTBOT_EMAIL_TO_ADDRESS=mario.bianchi@test.it \
     -e HOST_SMTP=smtp.example.com \
     -e CERTBOT_ENABLE_RENEW=1 \
     -e CERTBOT_CA_HOST=https://acme.sectigo.com/v2/OV \
@@ -45,7 +46,8 @@ With _environment_ variables you can set:
 2. `CERTBOT_ENABLE_RENEW_SEND_EMAIL=1` (default `0`): used to send en e-mail on each renew
 3. `HOST_SMTP=smtp.example.com` (default _not set_): It is used to set SMTP host to send an email at each _renew_; Works only on port `25`.
 4. `CERTBOT_EMAIL_FROM_ADDRESS=mario.rossi@test.it` (default _not set_): Set the sender
-5. `CERTBOT_CA_HOST=https://acme.sectigo.com/v2/OV` (default `https://acme.sectigo.com/v2/OV`): Set CA Remote server
+5. `CERTBOT_EMAIL_TO_ADDRESS=mario.bianchi@test.it` (default _not set_): Set the receiver
+6. `CERTBOT_CA_HOST=https://acme.sectigo.com/v2/OV` (default `https://acme.sectigo.com/v2/OV`): Set CA Remote server
 
 ### _Manual_ operations
 
