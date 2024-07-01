@@ -52,24 +52,46 @@ With _environment_ variables you can set:
 ### _Manual_ operations
 
 #### renew certificate
-```
+```sh
 docker exec -it nginx-certbot certbot renew --server https://acme.sectigo.com/v2/OV -v
 ```
 
 #### revoke certificate
-```
+```sh
 docker exec -it nginx-certbot certbot revoke --server https://acme.sectigo.com/v2/OV -v --cert-name <cert_name>
 ```
 
 #### delete certificate
-```
+```sh
 docker exec -it nginx-certbot certbot delete --server https://acme.sectigo.com/v2/OV -v --cert-name <cert_name>
 ```
 
 ### Build docker images by _yourself_
 Instead of using the _pre_-built docker image, you can build the Docker image by _yourself_:
-```
+```sh
 docker build -t vlauciani/nginx-certbot .
+```
+
+### Use in `docker compose`
+Example:
+```sh
+services:
+  nginx: 
+    image: vlauciani/nginx-certbot:latest
+    restart: always
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./letsencrypt:/etc/letsencrypt
+    ports:
+      - 443:443
+    environment:
+      - CERTBOT_ENABLE_RENEW=1
+      - CERTBOT_ENABLE_RENEW_SEND_EMAIL=1
+      - HOST_SMTP=ssmail.rm.ingv.it
+      - CERTBOT_EMAIL_FROM_ADDRESS=mario.rossi@test.it
+      - CERTBOT_EMAIL_TO_ADDRESS=mario.bianchi@test.it
+      - CERTBOT_CA_HOST=https://acme.sectigo.com/v2/OV
 ```
 
 ## Contribute
