@@ -1,1 +1,1 @@
-0 0,12 * * * root test -f /usr/bin/certbot -a \! -d /run/systemd/system && /certbot_renew.sh > /tmp/certbot_crontab.log 2>&1
+0 0,12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && /certbot_renew.sh > /tmp/certbot_crontab.log 2>&1
