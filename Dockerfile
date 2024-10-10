@@ -14,6 +14,8 @@ RUN apt-get update \
     certbot \
     vim \
     cron \
+    logrotate \
+    iputils-ping \
     procps \
     msmtp \
     python3-certbot-apache \
