@@ -47,7 +47,7 @@ With _environment_ variables you can set:
 3. `HOST_SMTP=smtp.example.com` (default _not set_): It is used to set SMTP host to send an email at each _renew_; Works only on port `25`.
 4. `CERTBOT_EMAIL_FROM_ADDRESS=mario.rossi@test.it` (default _not set_): Set the sender
 5. `CERTBOT_EMAIL_TO_ADDRESS=mario.bianchi@test.it` (default _not set_): Set the receiver
-6. `CERTBOT_CA_HOST=https://acme-v02.harica.gr/acme/...`: Set CA Remote server
+6. `CERTBOT_CA_HOST=https://acme-v02.harica.gr/acme/...` (default _not set_): Set CA Remote server
 
 ### _Manual_ operations
 
