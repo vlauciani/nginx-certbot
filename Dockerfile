@@ -26,6 +26,13 @@ RUN apt-get update \
 # Set bashrc
 RUN echo "alias ll='ls -l'" >> ~/.bashrc
 
+# Set .vimrc
+# Force Vim to write changes in place instead of replacing the file inode (atomic save).
+# This is critical when editing files mounted into the container via Docker bind mounts:
+# without this setting, Vim may create a new file and rename it, breaking the bind mount
+# and causing changes not to propagate correctly between the host and the container.
+RUN echo "set backupcopy=yes" >> ~/.vimrc
+
 #
 COPY entrypoint-wrapper.sh /
 COPY certbot_renew_send_email.sh /
